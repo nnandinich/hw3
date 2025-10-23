@@ -86,7 +86,24 @@ int main(int argc, char* argv[])
     print(head);
 
     // Test out your linked list code
+    Node * smaller= NULL;
+    Node * larger= NULL;
+    int pivot=7;
+    llpivot(head,smaller,larger,pivot);
+    cout << "smaller: ";
+    print(smaller);
+    cout << "larger: ";
+    print(larger);
 
+    struct isOdd{
+        bool operator()(int x)
+        {
+            return (x%2!=0);
+        }
+    };
+    Node* filtered= llfilter(larger, isOdd());
+    cout << "filtered: ";
+    print(filtered);
 
 
     

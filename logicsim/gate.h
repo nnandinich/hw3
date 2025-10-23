@@ -35,4 +35,11 @@ class Or2Gate : public Gate
       Event* update(uint64_t);
 };
 
+class NotGate : public Gate{
+  //NOT('X') -> 'X', NOT('0') -> '1', NOT('1') -> '0'. 
+  //Model the state change behavior to be the same as the And2Gate and Or2Gate.
+  public :
+    NotGate(Wire*, Wire*);
+    Event* update(uint64_t); 
+};
 #endif
